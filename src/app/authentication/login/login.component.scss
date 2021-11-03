@@ -1,0 +1,41 @@
+.container{
+    background-color: rgba(193,229,244,255);
+    height: 100vh;
+}
+
+#logo{
+    margin-left: 25%;
+    margin-top: 25%;
+}
+#letsStart{
+    color: rgba(207,142,143,255);
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: 0%;
+    left: 12%;
+    position: absolute;
+}
+
+#bgimg{
+    height: 107%;
+    width: 105%;
+}
+#matcardid{
+    top: 10%;
+}
+
+
+@media (max-width: 980px){
+
+    #logo{
+        margin-top: -15%;
+    }
+    #letsStart{
+        top: 11%;
+        left: 25%;
+    }
+    #bgimg{
+        margin-top: 11%;
+    }
+
+}

@@ -1,0 +1,13 @@
+<mat-sidenav-container class="example-container">
+
+    <mat-sidenav mode="side" opened id="sideNav">
+               <img id="logo" src="../../../assets/images/logo.png">
+               <button mat-button routerLink="/home" >List</button>
+               <button mat-button id="activeButton" routerLink="faq">FAQ</button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+            <img id="logout" routerLink="" src="../../../assets/images/logout.png">
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <router-outlet></router-outlet>

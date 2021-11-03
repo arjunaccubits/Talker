@@ -1,0 +1,85 @@
+<mat-sidenav-container class="example-container">
+
+    <mat-sidenav mode="side" opened id="sideNav">
+               <img id="logo" src="../../../assets/images/logo.png" routerLink = "login"> <br>
+               <button mat-button id="activeButton" routerLink="home">List</button>
+               <button mat-button routerLink="/faq" >FAQ</button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+            <img id="logout" src="../../../assets/images/logout.png" routerLink="" >
+             <p id="listHeading">Company List</p>
+          <div class="mat-elevation-z8 " id="matBox">
+    
+         <mat-table  [dataSource]="dataSource" >
+    
+        <ng-container matColumnDef="company">
+          <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="contact">
+          <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+        </ng-container>
+      
+      
+        
+        <ng-container matColumnDef="country">
+          <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+         <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator>
+    
+   </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <router-outlet></router-outlet>
+
+
+
+<!-- 
+<div class="row col-12">
+<div class="col-3">
+    <img id="logo" src="../../../assets/images/logo.png">
+</div>
+    <div class="col-9">
+    <img id="logout" src="../../../assets/images/logout.png">
+    <p id="listHeading">Company List</p>
+    <div class="mat-elevation-z8 ">
+    
+    <mat-table  [dataSource]="dataSource" >
+    
+        <ng-container matColumnDef="company">
+          <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="contact">
+          <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+        </ng-container>
+      
+      
+        
+        <ng-container matColumnDef="country">
+          <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+         <mat-paginator [pageSizeOptions]="[10,20]" showFirstLastButtons></mat-paginator>
+    
+   </div>
+    </div>
+
+</div> -->
