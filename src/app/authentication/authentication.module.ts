@@ -9,9 +9,12 @@ import {MatCardModule} from '@angular/material/card';
 
 
 
+
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -26,8 +29,9 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    ReactiveFormsModule,
     AuthenticationRoutingModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [LoginComponent]
 })
