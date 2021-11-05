@@ -8,12 +8,12 @@
                 <form fxLayoutAlign="stretch" fxLayout="column" class="example-form">
                    
                     <mat-form-field class="example-full-width"  > Name  
-                         <input matInput  [formControl]="name" required style="margin-top: 20px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
+                         <input matInput  [formControl]="name" required style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
                         <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>   
                   
                     <mat-form-field class="example-full-width"  >Password
-                         <input matInput type="password" [formControl]="name" required  style="margin-top: 20px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" > 
+                         <input matInput type="password" [formControl]="name" required  style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" > 
                          <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
                       </mat-form-field>
         
