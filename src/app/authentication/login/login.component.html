@@ -17,7 +17,7 @@
                          <mat-error *ngIf="!formGroup.controls['password'].valid">{{getError('pass')}}</mat-error>
                       </mat-form-field>
         
-                    <button fxFlex="5" mat-raised-button color="primary" type="submit" routerLink="home" [disabled]="!formGroup.valid" >Sign In</button>
+                    <button fxFlex="5" mat-raised-button color="primary" type="button" (click)="onClick()" routerLink="home" [disabled]="!formGroup.valid" >Sign In</button>
                     
                   </form>
             </mat-card>

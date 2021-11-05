@@ -6,7 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -34,6 +34,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AuthenticationRoutingModule,
     RouterModule,
   ],

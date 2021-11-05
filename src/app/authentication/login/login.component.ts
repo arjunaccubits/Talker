@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,11 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup;
   
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
+    ) { }
+  
   
   /* name = new FormControl('', [Validators.required, Validators.minLength(1),
     Validators.maxLength(12)]);
@@ -53,8 +59,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(post) {
+  onSubmit(formGroup) {
     // this.post = post;
   }
-
+  onClick(){
+    this.toastr.success('Hello, you are logged in!');
+  }
 }
