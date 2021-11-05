@@ -1,36 +1,34 @@
-<div class="container" fxLayoutAlign=" center" fxFlexFill>
- 
-    <div class="row  col-12">
-        <div class="col-lg-1 col-sm-1 "></div>
-        <div  class="col-lg-4 col-sm-4">
-            <img src="../../../assets/images/logo.png" id="logo">
-            <mat-card id="matcardid">
-                <form [formGroup]="formGroup" (ngSubmit)= "onSubmit(formGroup.value)" fxLayoutAlign="stretch" fxLayout="column" class="example-form">
-                   
-                    <mat-form-field class="example-full-width"  > Name  
-                         <input matInput type="text" formControlName="username" required style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
-                        <mat-error *ngIf="formGroup.controls['username'].invalid">{{getError('user')}}</mat-error>
-                    </mat-form-field>   
-                  
-                    <mat-form-field class="example-full-width"  >Password
-                         <input matInput type="password" formControlName="password" required  style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" > 
-                         <mat-error *ngIf="!formGroup.controls['password'].valid">{{getError('pass')}}</mat-error>
-                      </mat-form-field>
-        
-                    <button fxFlex="5" mat-raised-button color="primary" type="button" (click)="onClick()" routerLink="home" [disabled]="!formGroup.valid" >Sign In</button>
-                    
-                  </form>
-            </mat-card>
-        </div>
-            <div class="row col-lg-7 col-sm-7" >
-                <p id="letsStart">Let's start with login</p>
-                <img id="bgimg" src="../../../assets/images/icon.png" >
-            </div>
+<div class="container col-12" >
+    
+    <div class="row col-12">
+        <p id="letsStart">Let's start with login</p>
     </div>
-
+    <div class="row col-12">
+        <img src="../../../assets/images/logo.png" id="logo">
+    </div>
+    <div class="row col-12">
+        <mat-card id="matcardid">
+            <form [formGroup]="formGroup" (ngSubmit)= "onSubmit(formGroup.value)" fxLayoutAlign="stretch" fxLayout="column" class="example-form">
+               
+                <mat-form-field class="example-full-width"  > Name  
+                     <input matInput type="text" formControlName="username" required style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
+                    <mat-error *ngIf="formGroup.controls['username'].invalid">{{getError('user')}}</mat-error>
+                </mat-form-field>   
+              
+                <mat-form-field class="example-full-width"  >Password
+                     <input matInput type="password" formControlName="password" required  style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" > 
+                     <mat-error *ngIf="!formGroup.controls['password'].valid">{{getError('pass')}}</mat-error>
+                  </mat-form-field>
+    
+                <button fxFlex="5" mat-raised-button color="primary" type="button" (click)="onClick()" routerLink="home" [disabled]="!formGroup.valid" >Sign In</button>
+                
+              </form>
+        </mat-card>
+    </div>
 
 </div>
 
+<img id="bgImg" src="../../../assets/images/icon.png">
 
 
 
