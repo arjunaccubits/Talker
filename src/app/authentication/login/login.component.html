@@ -7,13 +7,13 @@
             <mat-card id="matcardid">
                 <form fxLayoutAlign="stretch" fxLayout="column" class="example-form">
                    
-                    <mat-form-field class="example-full-width"  >
-                         <input matInput placeholder="Name" [formControl]="name" required >
+                    <mat-form-field class="example-full-width"  > Name  
+                         <input matInput  [formControl]="name" required style="margin-top: 20px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
                         <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>   
                   
-                    <mat-form-field class="example-full-width" >
-                         <input matInput placeholder="Password" type="password" [formControl]="name" required >
+                    <mat-form-field class="example-full-width"  >Password
+                         <input matInput type="password" [formControl]="name" required  style="margin-top: 20px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" > 
                          <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
                       </mat-form-field>
         

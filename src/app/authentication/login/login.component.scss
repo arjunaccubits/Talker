@@ -3,9 +3,14 @@
     height: 100vh;
 }
 
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
 #logo{
     margin-left: 25%;
     margin-top: 25%;
+    width: 250px;
 }
 #letsStart{
     color: rgba(207,142,143,255);
@@ -16,9 +21,11 @@
     position: absolute;
 }
 
+
+
 .mat-raised-button{
     background: rgba(68,96,239,255);
-    margin-top: 23%;
+    margin-top: 13%;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -26,7 +33,7 @@
 
 .mat-form-field{
    
-    padding-top: 28px;
+    top: 28px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -38,7 +45,7 @@
 }
 .mat-card{
     top: 10%;
-    height: 60%;
+    height: 56%;
 }
 
 
