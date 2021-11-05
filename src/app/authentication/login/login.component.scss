@@ -47,6 +47,12 @@
 .mat-card{
     top: 10%;
     height: 56%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.mat-raised-button:hover{
+    background-color: rgb(255, 255, 255);
+    color: blue;
+    transition: ease 0.5s;
 }
 
 

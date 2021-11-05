@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,13 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
+  formGroup: FormGroup;
+  
 
-  name = new FormControl('', [Validators.required, Validators.minLength(1),
+  constructor(private formBuilder: FormBuilder) { }
+  
+  /* name = new FormControl('', [Validators.required, Validators.minLength(1),
     Validators.maxLength(12)]);
 
   getErrorMessage() {
@@ -17,11 +23,38 @@ export class LoginComponent implements OnInit {
     }
 
     return this.name.hasError('name') ? 'Not a valid name' : '';
+  } */
+
+  ngOnInit() {
+      this.createForm();
   }
 
-  constructor() { }
+  createForm() {
+    this.formGroup = this.formBuilder.group({
+      'username': ['', Validators.required],
+      'password': ['', Validators.required],
+    });
+  }
 
-  ngOnInit(): void {
+  getError(el) {
+    switch (el) {
+      case 'user':
+        if (this.formGroup.get('username').hasError('required')) {
+          return 'Username is required';
+        }
+        break;
+      case 'pass':
+        if (this.formGroup.get('password').hasError('required')) {
+          return 'Password is required';
+        }
+        break;
+      default:
+        return '';
+    }
+  }
+
+  onSubmit(post) {
+    // this.post = post;
   }
 
 }
