@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -38,6 +39,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AuthenticationRoutingModule,
     RouterModule,
   ],
+  providers: [CookieService],
   exports: [LoginComponent]
 })
 export class AuthenticationModule { }

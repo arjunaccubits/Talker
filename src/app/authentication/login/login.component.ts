@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-
+import { CookieService } from 'ngx-cookie-service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,17 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   
   formGroup: FormGroup;
+  cookieValue: string;
   
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastr: ToastrService
-    ) { }
+    private toastr: ToastrService,
+    private cookieService: CookieService
+    ) {
+      this.cookieService.set('X-Auth-Token', uuidv4());
+      this.cookieValue = this.cookieService.get('X-Auth-Token');
+     }
   
   
   /* name = new FormControl('', [Validators.required, Validators.minLength(1),
