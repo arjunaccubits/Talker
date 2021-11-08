@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
   
     if (this.formGroup.invalid){
-      this.toastr.error('wrong,please enter valid credentials' )
+      this.toastr.error('Please enter valid credentials' )
       return  ;
       }
       this.spinner.show();
@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['home']);
      },
 
-     
+
      (error)=>{
        console.log(error)
        this.toastr.error(error.message)
