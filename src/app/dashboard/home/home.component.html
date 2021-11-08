@@ -1,3 +1,4 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#FFFF" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <mat-sidenav-container class="example-container">
 
     <mat-sidenav mode="side" opened id="sideNav">
@@ -8,6 +9,7 @@
 
     <mat-sidenav-content>
             <img id="logout" src="../../../assets/images/logout.png" routerLink="" >
+            
              <p id="listHeading">Company List</p>
           <div class="mat-elevation-z0 " id="matBox">
     
@@ -39,5 +41,7 @@
    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  
 
   <router-outlet></router-outlet>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -24,7 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatPaginatorModule,
     MatSidenavModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule
   ]
 })
 export class DashboardModule { }

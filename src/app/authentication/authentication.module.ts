@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
@@ -36,6 +36,7 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgxSpinnerModule,
     AuthenticationRoutingModule,
     RouterModule,
   ],

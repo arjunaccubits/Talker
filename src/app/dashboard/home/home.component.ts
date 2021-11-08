@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator} from '@angular/material/paginator';
+import { NgxSpinnerService } from "ngx-spinner";
 
 export interface PeriodicElement {
   contact: string;
@@ -148,10 +149,16 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
   
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
+    this.spinner.show();
+
+    setTimeout(() => {
+     
+      this.spinner.hide();
+    }, 3000);
   }
 
 }
