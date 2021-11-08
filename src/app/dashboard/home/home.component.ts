@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ApiService } from '../../shared/service/api.service';
+import { ApiService } from '../../shared/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator} from '@angular/material/paginator';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 export interface PeriodicElement {
@@ -153,18 +155,14 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private spinner: NgxSpinnerService,
-    private api: ApiService
+    private api: ApiService,
+    private toastr: ToastrService,
+    private router: Router
     ) { }
 
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
   }
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      /* spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 3000);
-  }
+  
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
-
-import { ApiService } from '../../shared/service/api.service';
+import { Router } from '@angular/router';
+import { ApiService } from '../../shared/services/api.service';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
     private api: ApiService,
     private toastr: ToastrService,
     private cookieService: CookieService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private router: Router
+
     ) {
       this.cookieService.set('X-Auth-Token', uuidv4());
       this.cookieValue = this.cookieService.get('X-Auth-Token');
@@ -36,13 +38,7 @@ export class LoginComponent implements OnInit {
       this.createForm();
       
   }
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      /* spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 3000);
-  }
+ 
 
   createForm() {
     this.formGroup = this.formBuilder.group({
@@ -68,10 +64,37 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(formGroup) {
-    // this.post = post;
-  }
-  onClick(){
-    this.toastr.success('Hello, you are logged in!');
-  }
+  onSubmit() {
+  
+    if (this.formGroup.invalid){
+      this.toastr.error('wrong,please enter valid credentials' )
+      return  ;
+      }
+      this.spinner.show();
+      
+
+      console.log(this.formGroup.value);
+      this.api.functionPOST('auth/login/hr',this.formGroup.value, true).subscribe((response)=>{
+      console.log('response', response);
+      this.toastr.success(response.message);
+      this.spinner.hide();
+
+      localStorage.setItem('token', response.result.token);
+      localStorage.setItem('fName', response.result.firstName);
+      this.router.navigate(['home']);
+     },
+
+     
+     (error)=>{
+       console.log(error)
+       this.toastr.error(error.message)
+       this.spinner.hide();
+     }) 
+
+    }
+
 }
+  
+
+    
+    

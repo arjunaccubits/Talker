@@ -11,7 +11,7 @@
     </div>
     <div class="row col-12">
         <mat-card id="matcardid">
-            <form [formGroup]="formGroup" (ngSubmit)= "onSubmit(formGroup.value)" fxLayoutAlign="stretch" fxLayout="column" class="example-form">
+            <form [formGroup]="formGroup"  fxLayoutAlign="stretch" fxLayout="column" class="example-form">
                
                 <mat-form-field class="example-full-width"  > Name  
                      <input matInput type="text" formControlName="username" required style="margin-top: 20px; padding-bottom: 3px; display: block; border-bottom: 2px solid rgb(0, 0, 0);" >
@@ -23,7 +23,7 @@
                      <mat-error *ngIf="!formGroup.controls['password'].valid">{{getError('pass')}}</mat-error>
                   </mat-form-field>
     
-                <button fxFlex="5" mat-raised-button color="primary" type="button" (click)="onClick()" routerLink="home" [disabled]="!formGroup.valid" (click)="showSpinner()" >Sign In
+                <button fxFlex="5" mat-raised-button color="primary" type="button" [disabled]="formGroup.invalid" (click)="onSubmit()">Sign In
                    
                 </button>
                 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)"  size = "medium" color = "#FFFF" type = "ball-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

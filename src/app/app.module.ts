@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,10 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AuthenticationModule,
     DashboardModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+   
   ],
   exports: [
     SharedModule

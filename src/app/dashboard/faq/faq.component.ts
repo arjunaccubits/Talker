@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../shared/service/api.service';
+import { ApiService } from '../../shared/services/api.service';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
