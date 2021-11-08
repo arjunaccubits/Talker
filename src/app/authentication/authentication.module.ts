@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -27,6 +28,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
@@ -38,7 +40,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     AuthenticationRoutingModule,
-    RouterModule,
+    RouterModule
   ],
   providers: [CookieService],
   exports: [LoginComponent]

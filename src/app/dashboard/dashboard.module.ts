@@ -11,6 +11,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     DashboardRoutingModule,
     MatTableModule,
     MatPaginatorModule,
@@ -27,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     RouterModule,
     NgxSpinnerModule
+    
   ]
 })
 export class DashboardModule { }
