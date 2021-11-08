@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
       this.createForm();
-      this.spinner.show();
-
+      
+  }
+  showSpinner() {
+    this.spinner.show();
     setTimeout(() => {
-     
+      /* spinner ends after 5 seconds */
       this.spinner.hide();
     }, 3000);
   }

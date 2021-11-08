@@ -153,15 +153,16 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private spinner: NgxSpinnerService,
-    /* private api: ApiService */
+    private api: ApiService
     ) { }
 
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
+  }
+  showSpinner() {
     this.spinner.show();
-
     setTimeout(() => {
-     
+      /* spinner ends after 5 seconds */
       this.spinner.hide();
     }, 3000);
   }
