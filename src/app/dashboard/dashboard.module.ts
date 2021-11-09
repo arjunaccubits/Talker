@@ -12,12 +12,14 @@ import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../shared/shared.module';
+import { ReimbursementComponent } from './reimbursement/reimbursement.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FaqComponent
+    FaqComponent,
+    ReimbursementComponent
   ],
   imports: [
     CommonModule,

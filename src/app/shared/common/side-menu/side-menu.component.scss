@@ -1,0 +1,40 @@
+#logo{
+    cursor: pointer;
+    width: 90%;
+    margin: 17% auto 0px;
+}
+#matBox{
+    margin-left: 15%;
+    width: 75%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#sideNav{
+    border-width: 14px;
+    border-color: rgba(244,244,244,255);
+}
+.mat-sidenav-content{
+    height: 100vh;
+ }
+ .mat-sidenav{
+    width: 16%;
+ }
+.mat-button-toggle-group{
+    margin: 22% auto 0px;
+    border: 0px;
+}
+.buttonText{
+    width:  100%;
+    height: 50px;
+}
+.mat-button-toggle-checked{
+    
+    background: rgba(193,229,244,255);
+}
+
+.mat-button-toggle:hover{
+    background: rgba(193,229,244,255);
+    color: white;
+}
+
