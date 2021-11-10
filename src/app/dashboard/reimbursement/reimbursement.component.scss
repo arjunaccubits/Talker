@@ -1,0 +1,71 @@
+
+.mat-row:nth-child(even){
+    background-color: rgba(221,221,221,255);
+}
+.mat-row{
+    height: 5px ;
+    padding: 0px;
+    border-left: 1px solid rgba(221,221,221,255);
+}
+
+.mat-cell {
+    border-right: 1px solid rgba(221,221,221,255);
+    padding-left: 13px;
+    
+}
+.mat-header-cell{
+    font-weight: 500;
+    color: black;
+    font-size: 16px;
+    border-top: 1px solid rgba(221,221,221,255);
+    border-right: 1px solid rgba(221,221,221,255);
+    border-left: 1px solid rgba(221,221,221,255);
+    padding-left: 13px;
+}
+
+#listHeading{
+    font-size: 30px;
+    margin-left: 15%;
+    padding-top: 2%;
+    padding-bottom: 15px;
+}
+
+#logo{
+    cursor: pointer;
+    width: 90%;
+    margin: 14% auto 0px;
+}
+#matBox{
+    margin-left: 15%;
+    width: 75%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#sideNav{
+    border-width: 14px;
+    border-color: rgba(244,244,244,255);
+}
+.mat-sidenav-content{
+    height: 100vh;
+ }
+ .mat-sidenav{
+    width: 16%;
+}
+.mat-button{
+    top: 5%;
+    width: 100%;
+    height: 7%;
+    margin-top: 1%;
+    text-align: left;
+}
+.mat-button:hover{
+    background: rgba(193,229,244,255);
+}
+
+#activeButton{
+    background: rgba(193,229,244,255);
+}
+#activeButton:hover{
+    color: white;
+}

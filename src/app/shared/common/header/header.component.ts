@@ -29,7 +29,8 @@ export class HeaderComponent implements OnInit {
       localStorage.clear();
 
       this.router.navigate(['']);
-     },(error)=>{
+     },
+     (error)=>{
        console.log(error)
        this.toastr.error(error.message)
        this.spinner.hide();

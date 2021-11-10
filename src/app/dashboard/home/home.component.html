@@ -9,34 +9,29 @@
         <app-header></app-header>
             
              <p id="listHeading">Company List</p>
-          <div class="mat-elevation-z0 " id="matBox">
+
+        <div class="mat-elevation-z0 " id="matBox">
     
          <mat-table  [dataSource]="dataSource" >
     
-        <ng-container matColumnDef="company">
+        <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.name}} </mat-cell>
         </ng-container>
       
       
-        <ng-container matColumnDef="contact">
-          <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.status}} </mat-cell>
         </ng-container>
       
-      
-        
-        <ng-container matColumnDef="country">
-          <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
-        </ng-container>
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
          <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator>
     
-   </div>
+    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

@@ -1,11 +1,45 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#FFFF" type = "ball-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <mat-sidenav-container class="example-container">
 
     <mat-sidenav mode="side" opened id="sideNav">
-        <app-side-menu></app-side-menu>
+              <app-side-menu></app-side-menu>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <app-header></app-header>
+            
+             <p id="listHeading">Reimbursement</p>
+
+        <div class="mat-elevation-z0 " id="matBox">
+    
+         <mat-table  [dataSource]="dataSource" >
+    
+        <ng-container matColumnDef="userName">
+          <mat-header-cell *matHeaderCellDef> User Name </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.userName}} </mat-cell>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="amount">
+          <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.amount}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+            <mat-cell *matCellDef="let dataSource"> {{dataSource.id}} </mat-cell>
+          </ng-container>
+      
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+         <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator>
+    
+    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  
+
   <router-outlet></router-outlet>
