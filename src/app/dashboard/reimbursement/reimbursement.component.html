@@ -19,17 +19,31 @@
           <mat-cell *matCellDef="let dataSource"> {{dataSource.userName}} </mat-cell>
         </ng-container>
       
-      
+        <ng-container matColumnDef="createdAt">
+          <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.createdAt | date : 'medium' }} </mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="amount">
           <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
           <mat-cell *matCellDef="let dataSource"> {{dataSource.amount}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
-            <mat-cell *matCellDef="let dataSource"> {{dataSource.id}} </mat-cell>
-          </ng-container>
-      
+        <ng-container matColumnDef="expenseDate">
+          <mat-header-cell *matHeaderCellDef> Expense Date </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.expenseDate | date : 'medium' }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="eSign">
+          <mat-header-cell *matHeaderCellDef> E Sign </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.eSign}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> <button mat-icon-button> <mat-icon>visibility</mat-icon>  </button> </mat-cell>
+        </ng-container>
+
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

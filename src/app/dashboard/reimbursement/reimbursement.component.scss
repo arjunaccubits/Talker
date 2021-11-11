@@ -25,7 +25,7 @@
 
 #listHeading{
     font-size: 30px;
-    margin-left: 15%;
+    margin-left: 8%;
     padding-top: 2%;
     padding-bottom: 15px;
 }
@@ -36,8 +36,8 @@
     margin: 14% auto 0px;
 }
 #matBox{
-    margin-left: 15%;
-    width: 75%;
+    margin-left: 8%;
+    width: 85%;
     margin-top: 2%;
     margin-bottom: 1%;
 }
@@ -68,4 +68,11 @@
 }
 #activeButton:hover{
     color: white;
+}
+.mat-icon-button{
+    margin: auto 1%;
+}
+.mat-icon-button:hover{
+    color: black;
+    background-color: rgb(204, 201, 201);
 }

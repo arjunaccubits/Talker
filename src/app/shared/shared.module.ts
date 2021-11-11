@@ -10,13 +10,15 @@ import { SideMenuComponent } from './common/side-menu/side-menu.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PopupDetailsComponent } from './common/popup-details/popup-details.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    PopupDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonToggleModule,
     FlexLayoutModule    
   ],
-  exports: [HeaderComponent, SideMenuComponent]
+  exports: [HeaderComponent, SideMenuComponent, PopupDetailsComponent]
 })
 export class SharedModule { }

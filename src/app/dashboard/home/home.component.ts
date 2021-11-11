@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../shared/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
+
 import { MatSort} from '@angular/material/sort';
 import { MatPaginator} from '@angular/material/paginator';
 import { NgxSpinnerService } from "ngx-spinner";
@@ -22,7 +23,7 @@ export interface PeriodicElement {
 export class HomeComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = [ 'name', 'status'];
+  displayedColumns: string[] = [ 'name', 'status','action'];
 
 
 

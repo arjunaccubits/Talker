@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import {Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../shared/services/api.service';
-import { Observable } from 'rxjs';
+/* import { Observable } from 'rxjs'; */
 import { ToastrService } from 'ngx-toastr';
-import { CookieService } from 'ngx-cookie-service';
-import { v4 as uuidv4 } from 'uuid';
+/* import { CookieService } from 'ngx-cookie-service'; */
+/* import { v4 as uuidv4 } from 'uuid'; */
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
@@ -23,13 +23,13 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService,
     private toastr: ToastrService,
-    private cookieService: CookieService,
+   /*  private cookieService: CookieService, */
     private spinner: NgxSpinnerService,
     private router: Router
 
     ) {
-      this.cookieService.set('X-Auth-Token', uuidv4());
-      this.cookieValue = this.cookieService.get('X-Auth-Token');
+     /*  this.cookieService.set('X-Auth-Token', uuidv4());
+      this.cookieValue = this.cookieService.get('X-Auth-Token'); */
      }
   
   

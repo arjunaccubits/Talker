@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class ReimbursementComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = [ 'userName', 'id', 'amount'];
+  displayedColumns: string[] = [ 'userName', 'createdAt', 'amount','expenseDate','eSign','action'];
 
 
 

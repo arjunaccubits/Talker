@@ -14,28 +14,33 @@
     
          <mat-table  [dataSource]="dataSource" >
     
-        <ng-container matColumnDef="firstName">
-          <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> {{dataSource.firstName}} </mat-cell>
+        <ng-container matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.firstName}} {{dataSource.lastName}}</mat-cell>
         </ng-container>
       
       
         <ng-container matColumnDef="email">
           <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> {{dataSource.email}} </mat-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.email}}  </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="lastName">
-            <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-            <mat-cell *matCellDef="let dataSource"> {{dataSource.lastName}} </mat-cell>
-          </ng-container>
-      
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.status}}  </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+          <mat-cell *matCellDef="let dataSource"> <button mat-icon-button> <mat-icon>visibility</mat-icon>  </button> </mat-cell>
+        </ng-container>
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
          <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator>
-    
+        
+         
     </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

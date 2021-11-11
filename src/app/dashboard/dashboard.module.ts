@@ -5,7 +5,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NgxSpinnerModule } from "ngx-spinner";
-
+import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +29,7 @@ import { ReimbursementComponent } from './reimbursement/reimbursement.component'
     MatPaginatorModule,
     MatSidenavModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule,
     NgxSpinnerModule
     

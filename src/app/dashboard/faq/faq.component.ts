@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class FaqComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = [ 'firstName', 'lastName', 'email'];
+  displayedColumns: string[] = [ 'Name', 'email','status','action'];
 
 
 
