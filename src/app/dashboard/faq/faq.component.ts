@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit {
-  dataSource=[];
+  dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = [ 'firstName', 'lastName', 'email'];
 
@@ -28,10 +28,14 @@ export class FaqComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router
     ) { }
-
+  
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator
+  }
+  
   ngOnInit(): void {
     this.api.functionGET('company/1/employee?search=&limit=10&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
-      this.dataSource=response.result.rows;
+      this.dataSource.data=response.result.rows;
   })
 } 
 }

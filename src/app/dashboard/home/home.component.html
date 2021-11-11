@@ -29,9 +29,10 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-         <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator>
+        <!--  <mat-paginator [pageSizeOptions]="[10,15,25]" showFirstLastButtons></mat-paginator> -->
     
     </div>
+    <mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[10, 15, 20]"></mat-paginator>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

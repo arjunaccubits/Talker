@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./reimbursement.component.scss']
 })
 export class ReimbursementComponent implements OnInit {
-  dataSource=[];
+  dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = [ 'userName', 'id', 'amount'];
 
@@ -30,9 +30,13 @@ export class ReimbursementComponent implements OnInit {
     private router: Router
     ) { }
 
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator
+  }
+  
   ngOnInit(): void {
     this.api.functionGET('reimbursement?').subscribe((response)=>{
-      this.dataSource=response.result.rows;
+      this.dataSource.data=response.result.rows;
   })
 }
 }

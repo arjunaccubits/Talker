@@ -2,22 +2,18 @@
     <img id="logo" src="../../../assets/images/logo.png"> <br>
 
     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons"  id="buttonText" >
-      <label class="btn "  id="button1" (click)="showCompany()">
+      <label class="btn "  id="button1" [routerLink]="['/home']" routerLinkActive="active" >
         <input type="radio" name="options" checked> Company List
       </label>
-      <label class="btn " id="button2" (click)="showEmployee()">
-        <input type="radio" name="options" > Employee List
+      <label class="btn " id="button2" [routerLink]="['/faq']" routerLinkActive="active">
+        <input type="radio" name="options"  > Employee List
       </label>
-      <label class="btn "  id="button3" (click)="showReimbursement()">
-        <input type="radio" name="options"> Reimbursement
+      <label class="btn "  id="button3" [routerLink]="['/reimbursement']" routerLinkActive="active">
+        <input type="radio" name="options"  > Reimbursement
       </label>
     </div>
 
-   <!--  <mat-button-toggle-group fxLayout="column"  name="fontStyle" aria-label="Font Style" style="float: left;">
-        <mat-button-toggle  class="buttonText"  (click)="showCompany()" value="company"  >  Company List  </mat-button-toggle>
-        <mat-button-toggle class="buttonText" (click)="showEmployee()" value="employee" > Employee List </mat-button-toggle>
-        <mat-button-toggle class="buttonText" (click)="showReimbursement()" value="reimbursement" > Reimbursement </mat-button-toggle>
-      </mat-button-toggle-group> -->
+
 
 </div>
 

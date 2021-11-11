@@ -19,24 +19,4 @@ export class SideMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showCompany(){
-    this.api.functionGET('appConfiguration/company').subscribe((response)=>{
-    this.dataSource=response.result;
-      console.log('response', response);
-      this.router.navigate(['home']);
-     })
-  }
-  showEmployee(){
-    this.api.functionGET('company/1/employee?search=&limit=10&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
-      console.log('response', response);
-      this.router.navigate(['faq']);
-     })
-  }
-  showReimbursement(){
-    this.api.functionGET('reimbursement?').subscribe((response)=>{
-      console.log('response', response);
-      this.router.navigate(['reimbursement']);
-     })
-  }
-  
 }

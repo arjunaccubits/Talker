@@ -20,13 +20,14 @@ export interface PeriodicElement {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  dataSource=[];
+  dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = [ 'name', 'status'];
 
 
 
   @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
+  
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   
   constructor(
@@ -36,10 +37,14 @@ export class HomeComponent implements OnInit {
     private router: Router
     ) { }
 
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator
+  }
+  
   ngOnInit(){
    /*  this.dataSource.paginator = this.paginator; */
    this.api.functionGET('appConfiguration/company').subscribe((response)=>{
-    this.dataSource=response.result;
+    this.dataSource.data=response.result;
   })
 }
 
