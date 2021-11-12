@@ -7,6 +7,8 @@ import { MatPaginator} from '@angular/material/paginator';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { PopupDetailsComponent } from 'src/app/shared/common/popup-details/popup-details.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 export interface PeriodicElement {
@@ -35,7 +37,8 @@ export class HomeComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private api: ApiService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
     ) { }
 
     ngAfterViewInit() {
@@ -43,10 +46,27 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(){
-   /*  this.dataSource.paginator = this.paginator; */
-   this.api.functionGET('appConfiguration/company').subscribe((response)=>{
+    this.companyDetails();
+}
+companyDetails(){
+  this.api.functionGET('appConfiguration/company').subscribe((response)=>{
     this.dataSource.data=response.result;
   })
+}
+viewDetails(dataSource){
+  const dialogRef=this.dialog.open(PopupDetailsComponent,{
+    data:{
+      title:"Company",
+       item:dataSource
+    }
+  });
+  dialogRef.afterClosed().subscribe(result=>{
+    console.log("console ", result)
+  //  if (result){
+      this.toastr.success("popup closed")
+  //  }
+  })
+
 }
 
 }

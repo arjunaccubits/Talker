@@ -15,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ReimbursementComponent } from './reimbursement/reimbursement.component';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -31,7 +32,8 @@ import { ReimbursementComponent } from './reimbursement/reimbursement.component'
     MatButtonModule,
     MatIconModule,
     RouterModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+   
     
   ]
 })

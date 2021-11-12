@@ -1,1 +1,7 @@
-<p>popup-details works!</p>
+
+<h5>
+    {{details.title}} details 
+</h5>
+<div *ngIf="details.title=='Employee'" >
+    {{details.item.email}}
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-side-menu',
@@ -10,13 +11,19 @@ import { ApiService } from '../../services/api.service';
 export class SideMenuComponent implements OnInit {
   
   dataSource=[];
+  name="";
+  email="";
 
   constructor(
     private api: ApiService,
-    private router: Router) 
+    private router: Router,
+    private cookie: CookieService 
+    ) 
     { }
 
   ngOnInit(): void {
+    this.name=localStorage.getItem('fName');
+    this.email=this.cookie.get('email');
   }
 
 }

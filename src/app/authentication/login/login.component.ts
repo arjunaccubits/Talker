@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../shared/services/api.service';
 /* import { Observable } from 'rxjs'; */
 import { ToastrService } from 'ngx-toastr';
-/* import { CookieService } from 'ngx-cookie-service'; */
+import { CookieService } from 'ngx-cookie-service';
 /* import { v4 as uuidv4 } from 'uuid'; */
 import { NgxSpinnerService } from "ngx-spinner";
 
@@ -23,13 +23,11 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService,
     private toastr: ToastrService,
-   /*  private cookieService: CookieService, */
+    private cookieService: CookieService,
     private spinner: NgxSpinnerService,
     private router: Router
 
     ) {
-     /*  this.cookieService.set('X-Auth-Token', uuidv4());
-      this.cookieValue = this.cookieService.get('X-Auth-Token'); */
      }
   
   
@@ -81,6 +79,7 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem('token', response.result.token);
       localStorage.setItem('fName', response.result.firstName);
+      this.cookieService.set('email', response.result.email);
       this.router.navigate(['home']);
      },
 

@@ -31,17 +31,12 @@
 
         <ng-container matColumnDef="expenseDate">
           <mat-header-cell *matHeaderCellDef> Expense Date </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> {{dataSource.expenseDate | date : 'medium' }} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="eSign">
-          <mat-header-cell *matHeaderCellDef> E Sign </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> {{dataSource.eSign}} </mat-cell>
+          <mat-cell *matCellDef="let dataSource"> {{dataSource.expenseDate | date : 'MMMM d, y, h:mm a' }} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="action">
           <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> <button mat-icon-button> <mat-icon>visibility</mat-icon>  </button> </mat-cell>
+          <mat-cell *matCellDef="let dataSource"><mat-icon>visibility</mat-icon> </mat-cell>
         </ng-container>
 
       

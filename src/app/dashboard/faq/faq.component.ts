@@ -34,8 +34,11 @@ export class FaqComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.api.functionGET('company/1/employee?search=&limit=10&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
-      this.dataSource.data=response.result.rows;
-  })
+    this.employeeDetails();
 } 
+  employeeDetails() {
+    this.api.functionGET('company/1/employee?search=&limit=10&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
+    this.dataSource.data=response.result.rows;
+  })
+  }
 }

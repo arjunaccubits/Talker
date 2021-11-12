@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class ReimbursementComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = [ 'userName', 'createdAt', 'amount','expenseDate','eSign','action'];
+  displayedColumns: string[] = [ 'userName', 'createdAt', 'amount','expenseDate','action'];
 
 
 
@@ -35,8 +35,11 @@ export class ReimbursementComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.reimbursementDetails();
+}
+  reimbursementDetails(){
     this.api.functionGET('reimbursement?').subscribe((response)=>{
       this.dataSource.data=response.result.rows;
   })
-}
+  }
 }
