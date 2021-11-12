@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PopupDetailsComponent } from './common/popup-details/popup-details.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -28,7 +30,9 @@ import { PopupDetailsComponent } from './common/popup-details/popup-details.comp
     MatSidenavModule,
     MatButtonModule,
     MatButtonToggleModule,
-    FlexLayoutModule    
+    FlexLayoutModule ,
+    MatIconModule,
+    MatCardModule   
   ],
   exports: [HeaderComponent, SideMenuComponent, PopupDetailsComponent]
 })

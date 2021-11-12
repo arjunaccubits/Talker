@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../shared/services/api.service';
-/* import { Observable } from 'rxjs'; */
+
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
-/* import { v4 as uuidv4 } from 'uuid'; */
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({

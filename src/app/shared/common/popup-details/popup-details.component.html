@@ -1,7 +1,34 @@
+<button mat-icon-button class="close-button" >
+    <mat-icon class="close-icon" color="warn" (click)="closePopup()">close</mat-icon>
+</button>
 
-<h5>
-    {{details.title}} details 
-</h5>
-<div *ngIf="details.title=='Employee'" >
-    {{details.item.email}}
+
+<h3 mat-dialog-title >
+    {{details.title}} Details 
+</h3>
+<hr>
+
+<div mat-dialog-content>
+<div  *ngIf="details.title=='Company'" >
+   Name: {{details.item.name}} <br>
+   Status: {{details.item.status}}
 </div>
+
+<div *ngIf="details.title=='Employee'" >
+   Username: {{details.item.firstName}}  {{details.item.lastName}} <br>
+   Gender: {{details.item.gender}} <br>
+   Phone: {{details.item.phone}} <br>
+   Email: {{details.item.email}} <br>
+   Status: {{details.item.status}} <br>
+</div>
+
+<div *ngIf="details.title=='Reimbursement'" >
+   Username: {{details.item.userName}} <br>
+   User Id: {{details.item.userId}} <br>
+   Amount: {{details.item.amount}} <br>
+   Description: {{details.item.description}} <br>
+   Type: {{details.item.reimbursementTypeName}} <br>
+</div>
+
+</div>
+

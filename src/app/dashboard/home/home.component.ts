@@ -63,7 +63,7 @@ viewDetails(dataSource){
   dialogRef.afterClosed().subscribe(result=>{
     console.log("console ", result)
   //  if (result){
-      this.toastr.success("popup closed")
+    //  this.toastr.success("popup closed")
   //  }
   })
 

@@ -6,6 +6,8 @@ import { MatPaginator} from '@angular/material/paginator';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { PopupDetailsComponent } from 'src/app/shared/common/popup-details/popup-details.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -27,7 +29,8 @@ export class ReimbursementComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private api: ApiService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
     ) { }
 
     ngAfterViewInit() {
@@ -41,5 +44,19 @@ export class ReimbursementComponent implements OnInit {
     this.api.functionGET('reimbursement?').subscribe((response)=>{
       this.dataSource.data=response.result.rows;
   })
+  }
+
+  viewDetails(dataSource){
+    const dialogRef=this.dialog.open(PopupDetailsComponent,{
+      data:{
+        title:"Reimbursement",
+         item:dataSource
+      }
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      console.log("console ", result)
+    
+    })
+  
   }
 }

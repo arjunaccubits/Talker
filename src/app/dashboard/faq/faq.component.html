@@ -32,7 +32,7 @@
 
         <ng-container matColumnDef="action">
           <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-          <mat-cell *matCellDef="let dataSource"> <mat-icon>visibility</mat-icon></mat-cell>
+          <mat-cell *matCellDef="let dataSource"> <mat-icon (click)='viewDetails(dataSource)' >visibility</mat-icon></mat-cell>
         </ng-container>
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

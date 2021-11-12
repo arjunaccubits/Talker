@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SideMenuComponent implements OnInit {
   
-  dataSource=[];
+  
   name="";
   email="";
 
