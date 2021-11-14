@@ -41,7 +41,7 @@ export class ReimbursementComponent implements OnInit {
     this.reimbursementDetails();
 }
   reimbursementDetails(){
-    this.api.functionGET('reimbursement?search=&limit=42&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
+    this.api.functionGET('reimbursement?search&fromDate=&toDate=&reimbursementType=&status=&limit=42&page=1&sortBy=status&orderBy=ASC&timeOffset=-330').subscribe((response)=>{
       this.dataSource.data=response.result.rows;
   })
   }
