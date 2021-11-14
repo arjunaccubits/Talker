@@ -33,14 +33,16 @@ export class FaqComponent implements OnInit {
     ) { }
   
     ngAfterViewInit() {
-      this.dataSource.paginator = this.paginator
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      
   }
   
   ngOnInit(): void {
     this.employeeDetails();
 } 
   employeeDetails() {
-    this.api.functionGET('company/1/employee?search=&limit=10&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
+    this.api.functionGET('company/1/employee?search=&limit=147&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
     this.dataSource.data=response.result.rows;
   })
   }

@@ -3,7 +3,7 @@ import { ApiService } from '../../shared/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { MatSort} from '@angular/material/sort';
-import { MatPaginator} from '@angular/material/paginator';
+//import { MatPaginator} from '@angular/material/paginator';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = [ 'name', 'status','action'];
 
 
-
-  @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
   
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   
@@ -41,9 +39,6 @@ export class HomeComponent implements OnInit {
     private dialog: MatDialog
     ) { }
 
-    ngAfterViewInit() {
-      this.dataSource.paginator = this.paginator
-  }
   
   ngOnInit(){
     this.companyDetails();
