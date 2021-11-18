@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../auth.guard';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { ReimbursementComponent } from './reimbursement/reimbursement.component';
@@ -7,15 +8,18 @@ import { ReimbursementComponent } from './reimbursement/reimbursement.component'
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'faq',
-    component: FaqComponent
+    component: FaqComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'reimbursement',
-    component: ReimbursementComponent
+    component: ReimbursementComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

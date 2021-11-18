@@ -24,7 +24,9 @@ export class ApiService {
   ) { }
 
   baseUrl = environment.API;
- 
+    
+  
+
   // GET
   functionGET(url: string) {
     const Link = this.baseUrl + url;

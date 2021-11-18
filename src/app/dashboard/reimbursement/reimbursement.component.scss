@@ -69,10 +69,10 @@
 #activeButton:hover{
     color: white;
 }
-.mat-icon-button{
+.mat-icon{
     margin: auto 1%;
+    cursor: pointer;
 }
-.mat-icon-button:hover{
-    color: black;
-    background-color: rgb(204, 201, 201);
+.mat-icon:hover{
+    color: rgb(138, 135, 135);
 }
