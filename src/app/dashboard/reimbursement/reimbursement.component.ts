@@ -43,7 +43,16 @@ export class ReimbursementComponent implements OnInit {
   reimbursementDetails(){
     this.api.functionGET('reimbursement?search&fromDate=&toDate=&reimbursementType=&status=&limit=42&page=1&sortBy=status&orderBy=ASC&timeOffset=-330').subscribe((response)=>{
       this.dataSource.data=response.result.rows;
-  })
+
+      const removeDuplicates = (array, key) => {                  //remove duplicate data
+        return array.reduce((arr, item) => {
+          const removed = arr.filter(i => i[key] !== item[key]);
+          return [...removed, item];
+        }, []);
+      };
+      this.dataSource.data = (removeDuplicates(this.dataSource.data, 'userName'));
+      }
+    )
   }
 
   viewDetails(dataSource){

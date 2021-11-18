@@ -44,6 +44,14 @@ export class FaqComponent implements OnInit {
   employeeDetails() {
     this.api.functionGET('company/1/employee?search=&limit=147&page=1&orderBy=ASC&sortBy=createdAt').subscribe((response)=>{
     this.dataSource.data=response.result.rows;
+
+    const removeDuplicates = (array, key) => {                  //remove duplicate data
+      return array.reduce((arr, item) => {
+        const removed = arr.filter(i => i[key] !== item[key]);
+        return [...removed, item];
+      }, []);
+    };
+    this.dataSource.data = (removeDuplicates(this.dataSource.data, 'firstName'));
   })
   }
 
